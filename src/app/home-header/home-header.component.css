@@ -1,0 +1,12 @@
+.home{
+  min-height: 50vh;
+background-image: url(../../assets/images/title.webp);
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+.slider-content{
+  padding-top: 15%;
+
+}

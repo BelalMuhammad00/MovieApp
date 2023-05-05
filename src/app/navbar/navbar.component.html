@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand"><img src="./assets/images/logo-dark.webp" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li *ngIf="isLogid" class="nav-item btn-nav" >
+          <a class="nav-link " aria-current="page" routerLink="home"  routerLinkActive="btn-color">Home</a>
+        </li>
+        <li *ngIf="isLogid" class="nav-item btn-nav" >
+          <a class="nav-link" routerLink="movies" routerLinkActive="btn-color">Movies</a>
+        </li>
+        <li *ngIf="isLogid" class="nav-item btn-nav">
+          <a class="nav-link" routerLink="TvShow" routerLinkActive="btn-color">TVshows</a>
+        </li>
+        <li *ngIf="isLogid" class="nav-item btn-nav">
+          <a class="nav-link" routerLink="people" routerLinkActive="btn-color">People</a>
+        </li>
+      </ul>
+  <div class="d-flex align-items-center">
+
+
+    <ul class=" list-unstyled d-flex text-light mb-2 mb-lg-0">
+      <li class="mx-2"><i class="fa-brands fa-facebook"></i></li>
+      <li class="mx-2"><i class="fa-brands fa-twitter"></i></li>
+
+      <li class="mx-2"><i class="fa-brands fa-square-instagram"></i></li>
+      <li class="mx-2"><i class="fa-brands fa-youtube"></i></li>
+    </ul>
+
+<ul class="d-flex text-light list-unstyled mb-2 mb-lg-0">
+  <li *ngIf="!isLogid" class="nav-item mx-2 btn-nav">
+    <a class="nav-link p-2" routerLink="register" routerLinkActive="btn-color">Register</a>
+  </li>
+  <li *ngIf="!isLogid" class="nav-item mx-2 btn-nav">
+    <a class="nav-link p-2" routerLink="login" routerLinkActive="btn-color">Login</a>
+  </li>
+  <li *ngIf="isLogid"  class="nav-item mx-2 btn-nav">
+    <a class="nav-link p-2" (click)="logOut()" routerLink="login" routerLinkActive="btn-color">LogOut</a>
+  </li>
+</ul>
+  </div>
+
+
+    </div>
+  </div>
+</nav>

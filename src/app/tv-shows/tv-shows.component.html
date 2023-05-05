@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let tv of TvShows" class="col-md-2 cardMovie" >
+      <a [routerLink]=" ['/movieDetails',tv.id,media_type]">
+
+        <div class="my-2 position-relative">
+          <img [src]="'https://image.tmdb.org/t/p/w500'+tv.poster_path" class="w-100" [alt]="tv.name +'poster'" >
+        <div class="bg-info top-0 end-0 position-absolute text-light p-1">{{tv.vote_average.toFixed(1)}}</div>
+        <div class="content p-2">
+          <h6 class="text-light">{{tv.name}} : </h6>
+          <p class="text-info">{{tv.overview.split(" ").slice(0,8).join(" ")}} ...</p>
+        </div>
+        </div>
+
+      </a>
+        </div>
+  </div>
+</div>

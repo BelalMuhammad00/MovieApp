@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let actor of Peopoles" class="col-md-2 cardMovie" >
+      <a [routerLink]=" ['/movieDetails',actor.id,media_type]">
+        <div class="my-2 position-relative">
+          <img [src]="'https://image.tmdb.org/t/p/w500'+actor.profile_path" class="w-100" [alt]="actor.name + 'picture'">
+        <div class="content p-2 d-flex align-items-center justify-content-center">
+
+          <div>
+            <h6 class="h5 text-light">{{actor.name}} </h6>
+          </div>
+
+        </div>
+
+        </div>
+      </a>
+
+
+
+          </div>
+  </div>
+</div>

@@ -1,0 +1,110 @@
+
+
+<app-home-header [trndingMovies]="trndingMovies"></app-home-header>
+
+<div class="container">
+
+
+  <div class="row py-5">
+
+    <div class="col-md-4 d-flex align-items-center">
+      <div>
+        <div class="brbr w-25 mb-3"></div>
+        <h2 class="h2 text-light">Trendig <br> Movies <br> Right Now</h2>
+        <p class="text-muted">Most watched Movies By Week</p>
+        <div class="brbr w-100 mt-3"></div>
+      </div>
+
+    </div>
+
+    <div *ngFor="let movie of trndingMovies" class="col-md-2 cardMovie" >
+
+      <a [routerLink]=" ['/movieDetails',movie.id,movie.media_type]" >
+
+        <div class="my-2 position-relative">
+          <img [src]="'https://image.tmdb.org/t/p/w500'+movie.poster_path" class="w-100" alt="movie.poster">
+        <div class="bg-info top-0 end-0 position-absolute text-light p-1">{{movie.vote_average.toFixed(1)}}</div>
+        <div class="content p-2">
+          <h6 class="text-light">{{movie.title}} : </h6>
+          <p class="text-info">{{movie.overview.split(" ").slice(0,8).join(" ")}} ...</p>
+        </div>
+        </div>
+      </a>
+
+
+
+</div>
+
+
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-4 d-flex align-items-center">
+        <div>
+          <div class="brbr w-25 mb-3"></div>
+          <h2 class="h2 text-light">Trendig <br> TV Shows <br> Right Now</h2>
+          <p class="text-muted">Most watched TV Shows By Week</p>
+          <div class="brbr w-100 mt-3"></div>
+        </div>
+
+      </div>
+
+      <div *ngFor="let tv of trndingTV" class="col-md-2 cardMovie" >
+<a [routerLink]=" ['/movieDetails',tv.id,tv.media_type]">
+
+  <div class="my-2 position-relative">
+    <img [src]="'https://image.tmdb.org/t/p/w500'+tv.poster_path" class="w-100" [alt]="tv.name +'poster'" >
+  <div class="bg-info top-0 end-0 position-absolute text-light p-1">{{tv.vote_average.toFixed(1)}}</div>
+  <div class="content p-2">
+    <h6 class="text-light">{{tv.name}} : </h6>
+    <p class="text-info">{{tv.overview.split(" ").slice(0,8).join(" ")}} ...</p>
+  </div>
+  </div>
+
+</a>
+  </div>
+
+
+      </div>
+
+
+
+      <div class="row py-5">
+        <div class="col-md-4 d-flex align-items-center">
+          <div>
+            <div class="brbr w-25 mb-3"></div>
+            <h2 class="h2 text-light">Trendig <br> Actors <br> Right Now</h2>
+            <p class="text-muted">Most watched Actors By Week</p>
+            <div class="brbr w-100 mt-3"></div>
+          </div>
+        </div>
+        <div *ngFor="let actor of trndingPeople" class="col-md-2 cardMovie" >
+<a [routerLink]=" ['/movieDetails',actor.id,actor.media_type]">
+  <div class="my-2 position-relative">
+    <img [src]="'https://image.tmdb.org/t/p/w500'+actor.profile_path" class="w-100" [alt]="actor.name + 'picture'">
+  <div class="content p-2 d-flex align-items-center justify-content-center">
+
+    <div>
+      <h6 class="h5 text-light">{{actor.name}} </h6>
+    </div>
+
+  </div>
+
+  </div>
+</a>
+
+
+
+    </div>
+
+
+
+        </div>
+
+</div>
+
+
+
+

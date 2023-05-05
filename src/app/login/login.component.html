@@ -1,0 +1,39 @@
+<div class="w-75 mx-auto py-4 text-light" >
+
+
+
+  <h3>Login Now</h3>
+
+  <div *ngIf="apiError" class="alert alert-danger py-3">
+    <h5>{{apiError}}</h5>
+  </div>
+
+  <form [formGroup]="loginForm" (ngSubmit)="loginSub(loginForm)">
+
+
+
+    <label for="email">Email</label>
+    <input id="email" formControlName="email" class="form-control my-2" type="email">
+    <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched" class="alert alert-danger">
+      <h5 *ngIf="loginForm.get('email')?.getError('email')">Write a correct email</h5>
+      <h5 *ngIf="loginForm.get('email')?.getError('required')">email is required</h5>
+    </div>
+
+    <label for="password">Password</label>
+    <input id="password" formControlName="password" class="form-control my-2" type="password">
+    <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched" class="alert alert-danger">
+      <h5 *ngIf="loginForm.get('password')?.getError('pattern')">should  contains at least one digit and one uppercase or lowercase letter, and has a minimum length of 8 characters</h5>
+      <h5 *ngIf="loginForm.get('password')?.getError('required')">password is required</h5>
+    </div>
+
+
+
+
+
+<button [disabled]="loginForm.invalid" type="submit" class="btn btn-info text-light my-2 ">
+<i *ngIf="loading" class="fas fa-spin fa-spinner"></i>
+<span *ngIf="!loading" >login</span>
+</button>
+
+  </form>
+</div>

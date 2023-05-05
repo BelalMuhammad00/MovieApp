@@ -1,0 +1,66 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Open+Sans:wght@700&family=Roboto&display=swap');
+
+:root{
+  --main-color:#131722;
+  --light-Color:#24baef;
+  --bgTransparent-color:rgba(36,186,239,.6);
+  --font-color:#fff ;
+  --secondFont-color:#949cb0;
+  --border-color:#a8a8a83d;
+}
+
+body{
+background-color: var(--main-color);
+font-family: 'Montserrat', sans-serif;
+padding-top: 50px;
+}
+
+.bgColor{
+  background-color: var(--main-Color);
+}
+.lightBgColor{
+  background-color: var(--light-Color);
+}
+.bgTransparent{
+  background-color: var(--bgTransparent-color) ;
+}
+.fontColor{
+  background-color: var(--font-color) ;
+}
+
+.borderColor{
+  background-color: var(--border-color) ;
+}
+.secondFontColor{
+  background-color: var(--secondFont-color) ;
+}
+
+.brbr{
+  background-color: var(--secondFont-color);
+  height: 1px;
+}
+
+.content{
+  position: absolute;
+  top: 220px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.572);
+  transition: all 1s;
+  opacity: 0;
+}
+.cardMovie{
+  overflow: hidden;
+  cursor: pointer;
+}
+.cardMovie:hover .content{
+  top: 0px;
+  opacity: 1;
+}
+/* $bgTransparent:rgba(36,186,239,.6) ;
+$fontColor:#fff;
+$borderColor:#a8a8a83d;
+$borderHeight:1px;
+$secondFontColor:#949cb0; */
