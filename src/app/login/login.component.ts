@@ -16,7 +16,7 @@ export class LoginComponent {
 
   loginForm:FormGroup=new FormGroup({
     email:new FormControl(null,[Validators.required,Validators.email]),
-    password:new FormControl(null,[Validators.required,Validators.pattern(/^(?=.*\d)(?=.*[a-zA-Z])[a-zA-Z\d]{8,}$/)]),
+    password:new FormControl(null,[Validators.required,Validators.pattern(/^(?=.*\d)(?=.*[a-zA-Z])[a-zA-Z\d]{7,}$/)]),
   })
 
   loginSub(loginForm:FormGroup){
@@ -24,7 +24,7 @@ export class LoginComponent {
       this.loading=true;
 
       this._authService.login(loginForm.value).subscribe({
-        next:(res)=>{console.log(res);
+        next:(res)=>{
           if(res.message=="success"){
             this._router.navigate(['/home']);
             this.loading=false;
@@ -40,7 +40,7 @@ export class LoginComponent {
         }
       })
     }
-    console.log(loginForm);
+ 
 
   }
 }

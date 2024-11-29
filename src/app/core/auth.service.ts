@@ -20,18 +20,20 @@ userData = new BehaviorSubject(null);
    }
 
   register(userData:object):Observable<any>{
-return this._httpClient.post(`https://route-ecommerce.onrender.com/api/v1/auth/signup`,userData);
+   
+
+return this._httpClient.post(`https://ecommerce.routemisr.com/api/v1/auth/signup`,userData);
   }
 
   login(userData:object):Observable<any>{
-    return this._httpClient.post(`https://route-ecommerce.onrender.com/api/v1/auth/signin`,userData);
+    return this._httpClient.post(`https://ecommerce.routemisr.com/api/v1/auth/signin`,userData);
       }
 
   decodeUserData(){
     let incodedToken= JSON.stringify(localStorage.getItem('userToken'));
     let decodedToken:any= jwtDecode(incodedToken);
     this.userData.next(decodedToken);
-    console.log(this.userData);
+    
 
   }
 

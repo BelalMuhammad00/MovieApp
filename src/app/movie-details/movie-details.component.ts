@@ -20,7 +20,7 @@ this.media_type=media_type;
 this._TrendingService.getTrendingDetails(id , media_type).subscribe({
   next:(res)=>{
     this.item=res;
-    console.log(this.item);
+    
   },
   error:(err)=>{console.log(err);
   }
@@ -29,7 +29,7 @@ this._TrendingService.getTrendingDetails(id , media_type).subscribe({
 this._TrendingService.getSimilarMovies(id , media_type).subscribe({
   next:(res)=>{
     this.similar=res.results.filter((item:any)=>item.poster_path!==null).slice(0,6);
-    console.log(this.similar, 'sim');
+   
   },
   error:(err)=>{
 
@@ -44,7 +44,7 @@ anthorDetails(id:string ,media_type:string){
   this._TrendingService.getTrendingDetails(id , media_type).subscribe({
     next:(res)=>{
       this.item=res;
-      console.log(this.item);
+     
     },
     error:(err)=>{console.log(err);
     }
@@ -53,7 +53,7 @@ anthorDetails(id:string ,media_type:string){
   this._TrendingService.getSimilarMovies(id , media_type).subscribe({
     next:(res)=>{
       this.similar=res.results.filter((item:any)=>item.poster_path!==null).slice(0,6);
-      console.log(this.similar, 'sim');
+     
     },
     error:(err)=>{
 

@@ -14,7 +14,7 @@ export class PeopleComponent {
   ngOnInit(): void{
 
    this._trendingService.getPeople().subscribe({
-    next:(res)=>{ console.log(res.results);
+    next:(res)=>{ 
     this.Peopoles=res.results;
     },
     error:(err)=>{console.log(err);}

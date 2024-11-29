@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div *ngFor="let actor of Peopoles" class="col-md-2 cardMovie" >
+    <div *ngFor="let actor of Peopoles" class="col-md-2 col-6 cardMovie" >
       <a [routerLink]=" ['/movieDetails',actor.id,media_type]">
         <div class="my-2 position-relative">
           <img [src]="'https://image.tmdb.org/t/p/w500'+actor.profile_path" class="w-100" [alt]="actor.name + 'picture'">

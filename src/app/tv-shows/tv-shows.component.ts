@@ -14,7 +14,7 @@ export class TvShowsComponent {
   ngOnInit(): void{
 
    this._trendingService.getTv().subscribe({
-    next:(res)=>{ console.log(res.results);
+    next:(res)=>{ 
     this.TvShows=res.results;
     },
     error:(err)=>{console.log(err);}

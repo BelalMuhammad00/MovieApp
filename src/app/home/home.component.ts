@@ -20,21 +20,21 @@ constructor(private _trendingService:TrendingService){}
  ngOnInit(): void{
 
   this._trendingService.getTrending('movie').subscribe({
-    next:(res)=>{ console.log(res.results);
+    next:(res)=>{ 
     this.trndingMovies=res.results.filter((item:any)=>item.poster_path!==null).slice(0,10);
     },
     error:(err)=>{console.log(err);}
   })
 
   this._trendingService.getTrending('tv').subscribe({
-    next:(res)=>{ console.log(res.results);
+    next:(res)=>{ 
     this.trndingTV=res.results.slice(0,10);
     },
     error:(err)=>{console.log(err);}
   })
 
   this._trendingService.getTrending('person').subscribe({
-    next:(res)=>{ console.log(res.results);
+    next:(res)=>{
     this.trndingPeople=res.results.slice(0,10);
     },
     error:(err)=>{console.log(err);}

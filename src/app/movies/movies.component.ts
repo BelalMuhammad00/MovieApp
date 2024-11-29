@@ -15,7 +15,7 @@ media_type:string='movie'
   ngOnInit(): void{
 
    this._trendingService.getMovies().subscribe({
-    next:(res)=>{ console.log(res.results);
+    next:(res)=>{ 
     this.movies=res.results;
     },
     error:(err)=>{console.log(err);}
@@ -25,14 +25,14 @@ media_type:string='movie'
 searchMovies(){
 if(this.term){
   this._trendingService.searchMovies(this.term).subscribe({
-    next:(res)=>{ console.log(res.results);
+    next:(res)=>{ 
     this.movies=res.results.filter((item:any)=>item.poster_path!==null);
     },
     error:(err)=>{console.log(err);}
   })
 }else{
   this._trendingService.getMovies().subscribe({
-    next:(res)=>{ console.log(res.results);
+    next:(res)=>{ 
     this.movies=res.results.filter((item:any)=>item.poster_path!==null);
     },
     error:(err)=>{console.log(err);}
